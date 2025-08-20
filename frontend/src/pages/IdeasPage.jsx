@@ -7,7 +7,7 @@ export default function IdeasPage({ apiBase }){
 
   useEffect(()=>{
     const load = async ()=>{
-      const res = await axios.get(`https://ideal-portal-backend.onrender.com/api/ideas`, { headers: { Authorization: `Bearer ${token}` } })
+      const res = await axios.get(`${apiBase}/api/ideas`, { headers: { Authorization: `Bearer ${token}` } })
       setIdeas(res.data)
     }
     load().catch(console.error)
